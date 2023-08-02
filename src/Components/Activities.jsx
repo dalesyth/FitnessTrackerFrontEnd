@@ -21,8 +21,8 @@ const Activities = () => {
   }, []);
 
   return (
-    <div className="container mx-auto">
-      <h1>Activities</h1>
+    <div className="container">
+      <h1 className="text-center text-3xl font-bold pb-10 text-black">Activities</h1>
       {activities &&
         activities.map((activity) => (
           <div key={activity.id}>
