@@ -1,8 +1,11 @@
 import { React, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { fetchActivities } from "./ApiCalls";
 
 const Activities = () => {
   const [activities, setActivities] = useState([]);
+  const token = localStorage.getItem("token");
+  const user = localStorage.getItem("username");
 
   useEffect(() => {
     const getActivities = async () => {
@@ -22,7 +25,15 @@ const Activities = () => {
 
   return (
     <div className="container">
-      <h1 className="text-center text-3xl font-bold pb-10 text-black">Activities</h1>
+      <Link
+        to="/CreateActivity"
+        className="flex justify-center pt-2 text-blue-600 hover:underline"
+      >
+        Click here to create a new activity
+      </Link>
+      <h1 className="text-center text-3xl font-bold pb-10 text-black">
+        Activities
+      </h1>
       {activities &&
         activities.map((activity) => (
           <div key={activity.id}>

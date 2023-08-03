@@ -35,7 +35,7 @@ const Login = () => {
     setPassword("");
     localStorage.setItem("username", username);
 
-    navigate("/");
+    navigate("/Home");
   };
 
   return (

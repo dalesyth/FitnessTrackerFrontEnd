@@ -11,6 +11,7 @@ import MyRoutines from "./Components/MyRoutines";
 import ErrorPage from "./Components/ErrorPage";
 import Register from "./Components/Register";
 import Logout from "./Components/Logout";
+import CreateActivity from "./Components/CreateActivity";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/Register",
         element: <Register />,
+      },
+      {
+        path: "/CreateActivity",
+        element: <CreateActivity />,
       },
     ],
   },
