@@ -9,6 +9,7 @@ import Activities from "./Components/Activities";
 import Routines from "./Components/Routines";
 import MyRoutines from "./Components/MyRoutines";
 import ErrorPage from "./Components/ErrorPage";
+import Register from "./Components/Register";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/Routines",
         element: <Routines />,
+      },
+      {
+        path: "/Register",
+        element: <Register />,
       },
     ],
   },

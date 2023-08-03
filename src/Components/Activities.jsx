@@ -26,9 +26,9 @@ const Activities = () => {
       {activities &&
         activities.map((activity) => (
           <div key={activity.id}>
-            <p>ID: {activity.id}</p>
-            <p>Name: {activity.name}</p>
-            <p>Description: {activity.description}</p>
+            <div>ID: {activity.id}</div>
+            <div>Name: {activity.name}</div>
+            <div>Description: {activity.description}</div>
           </div>
         ))}
     </div>

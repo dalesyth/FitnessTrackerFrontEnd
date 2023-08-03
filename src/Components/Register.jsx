@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { loginUser } from "./ApiCalls";
+import { registerUser } from "./ApiCalls";
 
-const Login = () => {
+const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState(null);
-
+  const [token, setToken] = useState(localStorage.getItem("token"));
   const navigate = useNavigate();
 
   const handleUsername = (event) => {
@@ -21,12 +20,11 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const response = await loginUser(username, password);
+      const response = await registerUser(username, password);
 
       setToken(response.token);
       localStorage.setItem("token", response.token);
-
-      alert("You are now logged in!");
+      alert("Thank you for registering!");
     } catch (error) {
       console.error(error);
     }
@@ -34,14 +32,13 @@ const Login = () => {
     setUsername("");
     setPassword("");
     localStorage.setItem("username", username);
-
     navigate("/");
   };
 
   return (
     <div className="Container w-1/2 h-1/2 flex justify-center items-center m-auto mt-10 p-8 bg-gray-100 shadow-lg">
       <div className="login max-w-md w-full">
-        <h1 className="text-3xl text-center font-bold mb-4">Login</h1>
+        <h1 className="text-3xl text-center font-bold mb-4">Register</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block mb-2" htmlFor="username">
@@ -77,10 +74,10 @@ const Login = () => {
               SUBMIT
             </button>
             <Link
-              to="/register"
+              to="/login"
               className="underline flex justify-center pt-6 text-blue-600"
             >
-              Don't have an account? Click here to register
+              Already have an account? Log in here
             </Link>
           </div>
         </form>
@@ -89,4 +86,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
