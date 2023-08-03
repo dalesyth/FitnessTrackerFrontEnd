@@ -7,6 +7,7 @@ const Logout = () => {
 
     const handleLogout = () => {
         localStorage.removeItem("token");
+        localStorage.removeItem("username");
         alert("You are now logged out!");
         navigate("/Login");
     };

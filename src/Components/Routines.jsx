@@ -33,7 +33,7 @@ const Routines = () => {
             <div>Created By: {routine.creatorName}</div>
             <div>Name: {routine.name}</div>
             <div>Goal: {routine.goal}</div>
-            <h3>Activities</h3>
+            <h2>Activities</h2>
           </div>
         ))}
     </div>

@@ -26,7 +26,7 @@ const Login = () => {
       setToken(response.token);
       localStorage.setItem("token", response.token);
 
-      alert("You are now logged in!");
+      alert(`You are now logged in as ${username}!`);
     } catch (error) {
       console.error(error);
     }

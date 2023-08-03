@@ -25,6 +25,9 @@ const Navbar = () => {
         <Link to="/Login" className="no-underline p-6 hover:text-blue-600">
           Login
         </Link>
+        <Link to="/Logout" className="no-underline p-6 hover:text-blue-600">
+          Logout
+        </Link>
       </div>
     </nav>
   );

@@ -10,6 +10,7 @@ import Routines from "./Components/Routines";
 import MyRoutines from "./Components/MyRoutines";
 import ErrorPage from "./Components/ErrorPage";
 import Register from "./Components/Register";
+import Logout from "./Components/Logout";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/Login",
         element: <Login />,
+      },
+      {
+        path: "/Logout",
+        element: <Logout />,
       },
       {
         path: "/Activities",
