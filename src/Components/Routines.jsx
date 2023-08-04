@@ -28,13 +28,26 @@ const Routines = () => {
       </h1>
       {routines &&
         routines.map((routine) => (
+          <>
+          <h2><strong>Routines</strong></h2>
           <div key={routine.id}>
             <div>ID: {routine.id}</div>
             <div>Created By: {routine.creatorName}</div>
             <div>Name: {routine.name}</div>
             <div>Goal: {routine.goal}</div>
-            <h2>Activities</h2>
+            <h2><strong>Activities</strong></h2>
+            {routine.activities &&
+              routine.activities.map((activity) => (
+                <div key={activity.id}>
+                  <div>ID: {activity.id}</div>
+                  <div>Name: {activity.name}</div>
+                  <div>Description: {activity.description}</div>
+                  <div>Count: {activity.count}</div>
+                  <div>Duration: {activity.duration}</div>
+                </div>
+              ))}
           </div>
+          </>
         ))}
     </div>
   );

@@ -11,7 +11,7 @@ export async function registerUser(username, password) {
       },
       body: JSON.stringify({
         username,
-        password,
+        password
       }),
     });
 
@@ -31,8 +31,8 @@ export async function loginUser(username, password) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username,
-        password,
+          username,
+          password
       }),
     });
     const result = await response.json();
@@ -96,6 +96,76 @@ export async function fetchRoutines() {
 
     console.log(`result from fetchRoutines: ${result}`);
 
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export const routinesByUser = async (username) => {
+  try {
+    const response = await fetch(`${APIURL}/users/${username}/routines`, {
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+    });
+    const result = await response.json();
+    console.log(`result from routinesByUser: ${result}`);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const activitiesByUser = async (username) => {
+  try {
+    const response = await fetch(`${APIURL}/users/${username}/activities`, {
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+    });
+    const result = await response.json();
+    console.log(`result from activitiesByUser: ${result}`);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export const updateRoutine = async (routineId, token, name, goal) => {
+  try {
+    const response = await fetch(`${APIURL}/routines/${routineId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        name,
+        goal
+      }),
+    });
+    const result = await response.json();
+    console.log(`result from updateRoutine: ${result}`);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export const deleteRoutine = async (routineId, token) => {
+  try {
+    const response = await fetch(`${APIURL}/routines/${routineId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`
+      },
+    });
+    const result = await response.json();
+    console.log(`result from deleteRoutine: ${result}`);
     return result;
   } catch (error) {
     console.error(error);
