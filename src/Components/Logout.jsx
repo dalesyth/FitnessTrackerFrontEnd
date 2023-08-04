@@ -1,18 +1,14 @@
 import { useNavigate } from "react-router-dom";
 
-
-
 const Logout = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        localStorage.removeItem("username");
-        alert("You are now logged out!");
-        navigate("/Login");
-    };
-
-
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    alert("You are now logged out!");
+    navigate("/Login");
+  };
 
   return (
     <div className="Container w-1/2 h-1/2 flex justify-center items-center m-auto mt-10 p-8 bg-gray-100 shadow-lg">
@@ -26,6 +22,6 @@ const Logout = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Logout
+export default Logout;

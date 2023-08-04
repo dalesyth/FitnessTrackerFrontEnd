@@ -1,4 +1,5 @@
 const APIURL = `http://localhost:3000/api`;
+const token = localStorage.getItem("token");
 
 // POST routes
 
@@ -43,7 +44,7 @@ export async function loginUser(username, password) {
   }
 }
 
-export async function createActivity(token, name, description) {
+export async function createActivity(name, description) {
   try {
     const response = await fetch(`${APIURL}/activities`, {
       method: "POST",
