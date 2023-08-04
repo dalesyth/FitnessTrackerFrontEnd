@@ -1,12 +1,16 @@
 import { useNavigate } from "react-router-dom";
 
+
 const Logout = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    const token = localStorage.getItem("token");
+    console.log(`token in handleLogout start: ${token}`)
     localStorage.removeItem("token");
     localStorage.removeItem("username");
     alert("You are now logged out!");
+    
     navigate("/Login");
   };
 

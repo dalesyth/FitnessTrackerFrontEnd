@@ -9,6 +9,8 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  console.log(`token is: ${token}`)
+
   const handleUsername = (event) => {
     setUsername(event.target.value);
   };
@@ -22,9 +24,13 @@ const Login = () => {
 
     try {
       const response = await loginUser(username, password);
+      // console.log(`response.message: ${response.message}`);
+      // console.log(`response.token: ${response.token}`);
+      // console.log(`response.user: ${response.user}`);
 
       setToken(response.token);
       localStorage.setItem("token", response.token);
+      
 
       alert(`You are now logged in as ${username}!`);
     } catch (error) {
@@ -34,9 +40,13 @@ const Login = () => {
     setUsername("");
     setPassword("");
     localStorage.setItem("username", username);
+    
+    console.log(`username: ${username}`);
 
-    navigate("/Home");
+    navigate("/");
   };
+
+  // console.log(`token is: ${token}`)
 
   return (
     <div className="Container w-1/2 h-1/2 flex justify-center items-center m-auto mt-10 p-8 bg-gray-100 shadow-lg">

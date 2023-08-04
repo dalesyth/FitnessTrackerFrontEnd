@@ -8,6 +8,9 @@ const Activities = () => {
   const user = localStorage.getItem("username");
   const navigate = useNavigate();
 
+  console.log(`token in Activities.jsx: ${token}`);
+  console.log(`user in Activities.jsx: ${user}`);
+
   useEffect(() => {
     const getActivities = async () => {
       try {
@@ -26,16 +29,26 @@ const Activities = () => {
 
   return (
     <div className="container">
-      
       <h1 className="text-center text-3xl font-bold pb-3 text-black">
         Activities
       </h1>
-      <Link
-        to="/CreateActivity"
-        className="flex justify-center pt-1 text-blue-600 hover:underline"
-      >
-        Click here to create a new activity
-      </Link>
+
+      {token ? (
+        <Link
+          to="/CreateActivity"
+          className="flex justify-center pt-1 text-blue-600 hover:underline"
+        >
+          Click here to create a new activity
+        </Link>
+      ) : (
+        <Link
+          to="/Login"
+          className="flex justify-center pt-1 text-blue-600 hover:underline"
+        >
+          Login to create a new activity
+        </Link>
+      )}
+
       {activities &&
         activities.map((activity) => (
           <div key={activity.id}>
