@@ -13,6 +13,7 @@ import Register from "./Components/Register";
 import Logout from "./Components/Logout";
 import CreateActivity from "./Components/CreateActivity";
 
+
 const router = createBrowserRouter([
   {
     path: "/",

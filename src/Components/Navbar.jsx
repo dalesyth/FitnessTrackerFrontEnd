@@ -1,5 +1,6 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+const token = localStorage.getItem("token");
 
 const Navbar = () => {
   return (
@@ -22,6 +23,15 @@ const Navbar = () => {
         <Link to="/Activities" className="no-underline p-6 hover:text-blue-600">
           Activities
         </Link>
+        {/* {token ? (
+          <Link to="/Logout" className="no-underline p-6 hover:text-blue-600">
+            Logout
+          </Link>
+        ) : (
+          <Link to="/Login" className="no-underline p-6 hover:text-blue-600">
+            Login
+          </Link>
+        )} */}
         <Link to="/Login" className="no-underline p-6 hover:text-blue-600">
           Login
         </Link>

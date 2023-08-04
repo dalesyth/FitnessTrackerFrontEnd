@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { fetchActivities } from "./ApiCalls";
 
@@ -6,7 +6,7 @@ const Activities = () => {
   const [activities, setActivities] = useState([]);
   const token = localStorage.getItem("token");
   const user = localStorage.getItem("username");
-  const navigate = useNavigate();
+  
 
   console.log(`token in Activities.jsx: ${token}`);
   console.log(`user in Activities.jsx: ${user}`);
