@@ -32,7 +32,7 @@ const Register = () => {
     setUsername("");
     setPassword("");
     localStorage.setItem("username", username);
-    navigate("/");
+    navigate("/Login");
   };
 
   return (

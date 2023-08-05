@@ -43,28 +43,28 @@ const CreateActivity = () => {
         </h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block mb-2" htmlFor="title">
+            {/* <label className="block mb-2" htmlFor="title">
               Activity Name
-            </label>
+            </label> */}
             <input
               className="w-full rounded shadow-lg"
-              type="title"
-              id="title"
+              type="text"
               value={name}
               onChange={handleName}
+              placeholder="Activity Name"
               required
             ></input>
           </div>
           <div className="mb-4">
-            <label className="block mb-2" htmlFor="description">
+            {/* <label className="block mb-2" htmlFor="description">
               Description
-            </label>
+            </label> */}
             <input
               className="w-full rounded shadow-lg"
-              type="description"
-              id="description"
+              type="text"
               value={description}
               onChange={handleDescription}
+              placeholder="Description"
               required
             ></input>
           </div>

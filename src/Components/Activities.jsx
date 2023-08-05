@@ -24,7 +24,7 @@ const Activities = () => {
       }
     };
     getActivities();
-  }, []);
+  }, [activities]);
 
   return (
     <div className="container">

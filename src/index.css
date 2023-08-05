@@ -4,19 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 /* base styles */
 * {
   margin: 0;
   box-sizing: border-box;
   font-family: "Quicksand";
-  
- 
 }
 
 body {
-
-  
+  background: #d0cfdf;
 }
-

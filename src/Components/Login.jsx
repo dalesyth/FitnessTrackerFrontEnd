@@ -43,7 +43,7 @@ const Login = () => {
     
     console.log(`username: ${username}`);
 
-    navigate("/");
+    navigate("/Home");
   };
 
   // console.log(`token is: ${token}`)

@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-const token = localStorage.getItem("token");
 
 const Navbar = () => {
   return (
@@ -8,7 +6,7 @@ const Navbar = () => {
       <h1 className="text-pink-600 text-xl font-bold">Fitness Tracker</h1>
       <div className="links">
         <Link
-          to="/"
+          to="/Home"
           className="no-underline p-6 hover:text-blue-600 hover:font-bold"
         >
           Home
@@ -29,6 +27,7 @@ const Navbar = () => {
         <Link to="/Logout" className="no-underline p-6 hover:text-blue-600">
           Logout
         </Link>
+      
       </div>
     </nav>
   );

@@ -2,7 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-// import Root from "./routes/root";
+import Root from "./routes/root";
 import Home from "./Components/Home";
 import Login from "./Components/Login";
 import Activities from "./Components/Activities";
@@ -17,9 +17,13 @@ import CreateActivity from "./Components/CreateActivity";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "/Home",
+        element: <Home />,
+      },
       {
         path: "/Login",
         element: <Login />,
