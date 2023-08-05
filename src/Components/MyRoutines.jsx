@@ -1,11 +1,8 @@
-import React from 'react'
+import { useState, useEffect } from "react";
+import { routinesByUser, updateRoutine, deleteRoutine } from "./ApiCalls";
 
 const MyRoutines = () => {
-  return (
-    <div>
-        <h1>My Routines</h1>
-    </div>
-  )
-}
+  return <div>MyRoutines</div>;
+};
 
-export default MyRoutines
+export default MyRoutines;

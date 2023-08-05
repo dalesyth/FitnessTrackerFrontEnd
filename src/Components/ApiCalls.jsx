@@ -102,3 +102,61 @@ export async function fetchRoutines() {
     console.error(error);
   }
 }
+
+export async function routinesByUser(username) {
+  try {
+    const response = await fetch(`${APIURL}/users/${username}/routines`, {
+      headers: {
+        "Content-Type": "application.json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const result = await response.json();
+    console.log(`result from routinesByUser: ${result}`);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// PATCH routes
+
+export async function updateRoutine(routineId, token, name, goal) {
+  try {
+    const response = await fetch(`${APIURL}/routines/${routineId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application.json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        name,
+        goal,
+      }),
+    });
+    const result = await response.json();
+    console.log(`result from updateRoutine: ${result}`);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// DELETE routes
+
+export async function deleteRoutine(routineId, token) {
+  try {
+    const response = await fetch(`${APIURL}/routines/${routineId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const result = await response.json();
+    console.log(`result from deleteRoutine: ${result}`);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}

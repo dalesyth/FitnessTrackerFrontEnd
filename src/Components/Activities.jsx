@@ -6,7 +6,6 @@ const Activities = () => {
   const [activities, setActivities] = useState([]);
   const token = localStorage.getItem("token");
   const user = localStorage.getItem("username");
-  
 
   console.log(`token in Activities.jsx: ${token}`);
   console.log(`user in Activities.jsx: ${user}`);
