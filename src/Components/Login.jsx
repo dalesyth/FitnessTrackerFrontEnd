@@ -30,6 +30,7 @@ const Login = () => {
 
       setToken(response.token);
       localStorage.setItem("token", response.token);
+
       
 
       alert(`You are now logged in as ${username}!`);
@@ -41,7 +42,9 @@ const Login = () => {
     setPassword("");
     localStorage.setItem("username", username);
     
-    console.log(`username: ${username}`);
+    console.log(`username in Login: ${username}`);
+    const token = localStorage.getItem("token")
+    console.log(`token in Login: ${token}`)
 
     navigate("/Home");
   };

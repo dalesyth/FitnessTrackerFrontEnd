@@ -12,7 +12,8 @@ import ErrorPage from "./Components/ErrorPage";
 import Register from "./Components/Register";
 import Logout from "./Components/Logout";
 import CreateActivity from "./Components/CreateActivity";
-
+import CreateRoutine from "./Components/CreateRoutine";
+import UpdateRoutine from "./Components/UpdateRoutine";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,14 @@ const router = createBrowserRouter([
       {
         path: "/CreateActivity",
         element: <CreateActivity />,
+      },
+      {
+        path: "/CreateRoutine",
+        element: <CreateRoutine />,
+      },
+      {
+        path: "/UpdateRoutine",
+        element: <UpdateRoutine />,
       },
     ],
   },

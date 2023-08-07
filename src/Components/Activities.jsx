@@ -50,9 +50,9 @@ const Activities = () => {
 
       {activities &&
         activities.map((activity) => (
-          <div key={activity.id}>
-            <div>ID: {activity.id}</div>
-            <div>Name: {activity.name}</div>
+          <div key={activity.id} className="pb-10">
+            {/* <div>ID: {activity.id}</div> */}
+            <div className="font-bold">Activity Name: {activity.name}</div>
             <div>Description: {activity.description}</div>
           </div>
         ))}

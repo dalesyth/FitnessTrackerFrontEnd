@@ -29,21 +29,25 @@ const Routines = () => {
       {routines &&
         routines.map((routine) => (
           <>
-            <h2>
+            {/* <h2>
               <strong>Routines</strong>
-            </h2>
-            <div key={routine.id}>
-              <div>ID: {routine.id}</div>
-              <div>Created By: {routine.creatorName}</div>
-              <div>Name: {routine.name}</div>
+            </h2> */}
+            <div key={routine.id} className="pb-10">
+              <h2>
+                <strong>Routine Name: {routine.name}</strong>
+              </h2>
+              {/* <div>ID: {routine.id}</div> */}
               <div>Goal: {routine.goal}</div>
+              <div>Created By: {routine.creatorName}</div>
+              {/* <div>Name: {routine.name}</div> */}
+              {/* <div>Goal: {routine.goal}</div> */}
               <h2>
                 <strong>Activities</strong>
               </h2>
               {routine.activities &&
                 routine.activities.map((activity) => (
                   <div key={activity.id}>
-                    <div>ID: {activity.id}</div>
+                    {/* <div>ID: {activity.id}</div> */}
                     <div>Name: {activity.name}</div>
                     <div>Description: {activity.description}</div>
                     <div>Count: {activity.count}</div>
