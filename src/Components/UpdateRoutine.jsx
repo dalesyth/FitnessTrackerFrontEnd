@@ -3,26 +3,31 @@ import { useNavigate } from "react-router-dom";
 import { updateRoutine } from "./ApiCalls";
 
 const UpdateRoutine = () => {
-  const [isPublic, setIsPublic] = useState(true);
+  // const [isPublic, setIsPublic] = useState(true);
   const [name, setName] = useState("");
   const [goal, setGoal] = useState("");
+  const [isChecked, setIsChecked] = useState(true);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const routineId = localStorage.getItem("routineId");
 
-  const handleIsPublic = (event) => {
-    setIsPublic(event.target.value);
-    console.log(`isPublic from handleIsPublic: ${isPublic}`)
+  // const handleIsPublic = (event) => {
+  //   setIsPublic(event.target.checked);
+  //   console.log(`isPublic from handleIsPublic: ${isPublic}`);
+  // };
+
+  const handleCheckbox = (event) => {
+    setIsChecked(event.target.checked)
   };
 
   const handleName = (event) => {
     setName(event.target.value);
-    console.log(`name from handleName: ${name}`)
+    console.log(`name from handleName: ${name}`);
   };
 
   const handleGoal = (event) => {
     setGoal(event.target.value);
-    console.log(`goal from handleGoal: ${goal}`)
+    console.log(`goal from handleGoal: ${goal}`);
   };
 
   const handleSubmit = (event) => {
@@ -30,7 +35,13 @@ const UpdateRoutine = () => {
 
     const handleUpdateRoutine = async () => {
       try {
-        const response = await updateRoutine(routineId, token, isPublic, name, goal);
+        const response = await updateRoutine(
+          routineId,
+          token,
+          isChecked,
+          name,
+          goal
+        );
 
         console.log(`Result in handleUpdateRoutine: ${response}`);
       } catch (error) {
@@ -83,9 +94,9 @@ const UpdateRoutine = () => {
             <input
               className="w-full rounded shadow-lg"
               type="checkbox"
-              value={isPublic}
-              onChange={handleIsPublic}
-              defaultChecked="true"
+              checked={isChecked}
+              // value={isPublic}
+              onChange={handleCheckbox}
             ></input>
           </div>
 

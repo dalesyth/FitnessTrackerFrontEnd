@@ -34,7 +34,7 @@ const MyRoutines = () => {
       }
     };
     getRoutines();
-  }, [routines]);
+  }, []);
 
   const handleUpdateRoutine = (routineId, token) => {
     console.log(

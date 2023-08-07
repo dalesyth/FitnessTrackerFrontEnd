@@ -67,7 +67,7 @@ export async function createActivity(name, description) {
 
 export async function createRoutine(isPublic, name, goal) {
   try {
-    console.log(`token in createRoutine: ${token}`)
+    console.log(`token in createRoutine: ${token}`);
     const response = await fetch(`${APIURL}/routines`, {
       method: "POST",
       headers: {
@@ -142,26 +142,30 @@ export async function getUserInfo() {
 
 // PATCH routes
 
-export async function updateRoutine(routineId, token, isPublic, name, goal) {
-  console.log(`routineId: ${routineId} from updateRoutine`)
-  console.log(`isPublic from updateRoutine: ${isPublic}`)
-  console.log(`name from updateRoutine: ${name}`)
-  console.log(`goal from updateRoutine: ${goal}`)
+export async function updateRoutine(routineId, token, isChecked, name, goal) {
+  console.log(`routineId: ${routineId} from updateRoutine`);
+  console.log(`isChecked from updateRoutine: ${isChecked}`);
+  console.log(`name from updateRoutine: ${name}`);
+  console.log(`goal from updateRoutine: ${goal}`);
   try {
     const response = await fetch(`${APIURL}/routines/${routineId}`, {
       method: "PATCH",
       headers: {
-        "Content-Type": "application.json",
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
-        isPublic,
+        isPublic: isChecked,
         name,
         goal,
       }),
     });
     const result = await response.json();
-    console.log(`result from updateRoutine: ${result}`);
+    console.log("result from updateRoutine (Obj.keys):", Object.keys(result));
+    console.log(
+      "result from updateRoutine (Obj.values):",
+      Object.values(result)
+    );
     return result;
   } catch (error) {
     console.error(error);
